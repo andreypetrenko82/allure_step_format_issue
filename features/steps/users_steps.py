@@ -9,7 +9,6 @@ fake = Faker(['en_US'])
 def step_impl(context, random_name):
     user_name = fake.first_name_male()  # Faker method: https://faker.readthedocs.io/en/master/locales/en_US.html#faker-providers-person
     context.step.name = context.step.name.format(random_name=user_name)
-    allure.attach(user_name, 'User name')
 
 @step('I specify "{random_email}" as user email')
 def step_impl(context, random_email):
